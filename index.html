@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YallaPlay — Book Sports Fields</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Yalla<span>Play</span></a>
+      <button class="navbar__toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="football.html">Football</a></li>
+        <li><a href="basketball.html">Basketball</a></li>
+        <li><a href="tennis.html">Tennis</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero__bg" style="background-image: url('images/hero-bg.jpg');"></div>
+    <div class="container hero__content">
+      <div class="hero__badge">⚡ Book in under 60 seconds</div>
+      <h1 class="hero__title">
+        YOUR FIELD.<br>
+        <em>YOUR TIME.</em><br>
+        <span class="accent">PLAY NOW.</span>
+      </h1>
+      <p class="hero__desc">
+        YallaPlay connects you to the best football fields, basketball courts, and tennis courts in the city — instantly, with no phone calls needed.
+      </p>
+      <div class="hero__cta">
+        <a href="football.html" class="btn btn-primary">Browse Fields →</a>
+        <a href="#sports" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sports-section" id="sports">
+    <div class="container">
+      <p class="section-label">Choose Your Sport</p>
+      <h2 class="section-title">What Do You Want to Play?</h2>
+
+      <div class="sport-cards">
+
+        <a href="football.html" class="sport-card">
+          <img class="sport-card__img" src="images/football1.jpg" alt="Football field" />
+          <div class="sport-card__overlay"></div>
+          <div class="sport-card__body">
+            <div class="sport-card__icon">⚽</div>
+            <h3 class="sport-card__name">Football</h3>
+            <p class="sport-card__sub">4 fields available</p>
+            <span class="btn btn-primary">Book a Field →</span>
+          </div>
+        </a>
+
+        <a href="basketball.html" class="sport-card">
+          <img class="sport-card__img" src="images/basketball1.jpg" alt="Basketball court" />
+          <div class="sport-card__overlay"></div>
+          <div class="sport-card__body">
+            <div class="sport-card__icon">🏀</div>
+            <h3 class="sport-card__name">Basketball</h3>
+            <p class="sport-card__sub">3 courts available</p>
+            <span class="btn btn-primary">Book a Court →</span>
+          </div>
+        </a>
+
+        <a href="tennis.html" class="sport-card">
+          <img class="sport-card__img" src="images/tennis1.jpg" alt="Tennis court" />
+          <div class="sport-card__overlay"></div>
+          <div class="sport-card__body">
+            <div class="sport-card__icon">🎾</div>
+            <h3 class="sport-card__name">Tennis</h3>
+            <p class="sport-card__sub">3 courts available</p>
+            <span class="btn btn-primary">Book a Court →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer__inner">
+      <div class="footer__logo">Yalla<span>Play</span></div>
+      <div class="footer__contact">
+        <div class="footer__contact-item"><span>📞</span> 0775970172 / 0780510226</div>
+        <div class="footer__contact-item"><span>📍</span> Kampala, Uganda</div>
+      </div>
+      <p class="footer__copy">© 2026 YallaPlay. All rights reserved.</p>
+      <nav class="footer__links">
+        <a href="index.html">Home</a><a href="football.html">Football</a>
+        <a href="basketball.html">Basketball</a><a href="tennis.html">Tennis</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
