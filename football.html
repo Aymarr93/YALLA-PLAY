@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Football Fields — YallaPlay</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Yalla<span>Play</span></a>
+      <button class="navbar__toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="football.html" class="active">Football</a></li>
+        <li><a href="basketball.html">Basketball</a></li>
+        <li><a href="tennis.html">Tennis</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="sport-hero">
+    <div class="container sport-hero__inner">
+      <div class="sport-hero__text">
+        <p class="sport-hero__label">⚽ Football Fields</p>
+        <h1 class="sport-hero__title">FIND YOUR PERFECT PITCH</h1>
+        <p class="sport-hero__desc">
+          From 7-a-side turf arenas to full 11-a-side grass pitches — pick the field that fits your squad and get on the pitch today.
+        </p>
+        <div class="stat-row">
+          <div class="stat"><span class="stat__num">4</span><span class="stat__lbl">Fields Available</span></div>
+          <div class="stat"><span class="stat__num">UGX 60K</span><span class="stat__lbl">Starting Price / hr</span></div>
+          <div class="stat"><span class="stat__num">24/7</span><span class="stat__lbl">Open Hours</span></div>
+        </div>
+      </div>
+      <div class="sport-hero__img-wrap">
+        <img src="images/football1.jpg" alt="Football field" />
+      </div>
+    </div>
+  </section>
+
+  <section class="fields-section">
+    <div class="container">
+      <p class="section-label">Available Fields</p>
+      <h2 class="section-title">Choose & Book Instantly</h2>
+      <div class="fields-grid">
+
+        <article class="field-card">
+          <div class="field-card__img-wrap">
+            <img src="images/football-arena-green.jpg" alt="Arena Green Turf" />
+            <span class="field-card__badge">Available</span>
+          </div>
+          <div class="field-card__body">
+            <h3 class="field-card__title">Arena Green Turf</h3>
+            <div class="field-card__meta">
+              <span class="field-card__tag">📍 Downtown</span>
+              <span class="field-card__tag">👥 7-a-side</span>
+            </div>
+            <p class="field-card__desc">Premium artificial turf with floodlights, changing rooms, and a nearby café. Perfect for evening 5-a-side matches.</p>
+            <div class="field-card__footer">
+              <div class="field-card__price"><strong>60K</strong><span>per hour</span></div>
+              <a href="details.html?field=arena-green&sport=football" class="btn btn-book">Book Now →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="field-card">
+          <div class="field-card__img-wrap">
+            <img src="images/football-city-pitch.jpg" alt="City Pitch Central" />
+            <span class="field-card__badge">Available</span>
+          </div>
+          <div class="field-card__body">
+            <h3 class="field-card__title">City Pitch Central</h3>
+            <div class="field-card__meta">
+              <span class="field-card__tag">📍 City Centre</span>
+              <span class="field-card__tag">👥 11-a-side</span>
+            </div>
+            <p class="field-card__desc">Natural grass 11-a-side pitch built for all-weather play. Locker rooms and scoreboard included.</p>
+            <div class="field-card__footer">
+              <div class="field-card__price"><strong>90K</strong><span>per hour</span></div>
+              <a href="details.html?field=city-pitch&sport=football" class="btn btn-book">Book Now →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="field-card">
+          <div class="field-card__img-wrap">
+            <img src="images/football-westside.jpg" alt="Westside Grass Pitch" />
+            <span class="field-card__badge badge--full">Full Today</span>
+          </div>
+          <div class="field-card__body">
+            <h3 class="field-card__title">Westside Grass Pitch</h3>
+            <div class="field-card__meta">
+              <span class="field-card__tag">📍 West District</span>
+              <span class="field-card__tag">👥 11-a-side</span>
+            </div>
+            <p class="field-card__desc">Full-sized floodlit grass pitch maintained to competition standard. Ideal for league training and tournaments.</p>
+            <div class="field-card__footer">
+              <div class="field-card__price"><strong>90K</strong><span>per hour</span></div>
+              <a href="details.html?field=westside&sport=football" class="btn btn-book">Book Now →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="field-card">
+          <div class="field-card__img-wrap">
+            <img src="images/football-northgate.jpg" alt="Northgate Indoor Arena" />
+            <span class="field-card__badge">Available</span>
+          </div>
+          <div class="field-card__body">
+            <h3 class="field-card__title">Northgate Indoor Arena</h3>
+            <div class="field-card__meta">
+              <span class="field-card__tag">📍 North Side</span>
+              <span class="field-card__tag">👥 7-a-side</span>
+            </div>
+            <p class="field-card__desc">Open-air turf arena with lively atmosphere, consistent surface, and floodlights for evening sessions.</p>
+            <div class="field-card__footer">
+              <div class="field-card__price"><strong>60K</strong><span>per hour</span></div>
+              <a href="details.html?field=northgate&sport=football" class="btn btn-book">Book Now →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer__inner">
+      <div class="footer__logo">Yalla<span>Play</span></div>
+      <div class="footer__contact">
+        <div class="footer__contact-item"><span>📞</span> 0775970172 / 0780510226</div>
+        <div class="footer__contact-item"><span>📍</span> Uganda, Kampala</div>
+      </div>
+      <p class="footer__copy">© 2026 YallaPlay. All rights reserved.</p>
+      <nav class="footer__links">
+        <a href="index.html">Home</a><a href="football.html">Football</a>
+        <a href="basketball.html">Basketball</a><a href="tennis.html">Tennis</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
