@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basketball Courts — YallaPlay</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Yalla<span>Play</span></a>
+      <button class="navbar__toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="football.html">Football</a></li>
+        <li><a href="basketball.html" class="active">Basketball</a></li>
+        <li><a href="tennis.html">Tennis</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="sport-hero">
+    <div class="container sport-hero__inner">
+      <div class="sport-hero__text">
+        <p class="sport-hero__label">🏀 Basketball Courts</p>
+        <h1 class="sport-hero__title">TAKE IT TO THE COURT</h1>
+        <p class="sport-hero__desc">
+          Indoor hardwood courts and outdoor courts — sized for full 5v5 or quick 3v3 runs. All courts include hoops, lines, and great vibes.
+        </p>
+        <div class="stat-row">
+          <div class="stat"><span class="stat__num">3</span><span class="stat__lbl">Courts Available</span></div>
+          <div class="stat"><span class="stat__num">40K</span><span class="stat__lbl">Starting Price / hr</span></div>
+          <div class="stat"><span class="stat__num">6am</span><span class="stat__lbl">Earliest Slot</span></div>
+        </div>
+      </div>
+      <div class="sport-hero__img-wrap">
+        <img src="images/basketball1.jpg" alt="Basketball court" />
+      </div>
+    </div>
+  </section>
+
+  <section class="fields-section">
+    <div class="container">
+      <p class="section-label">Available Courts</p>
+      <h2 class="section-title">Pick a Court, Hit the Floor</h2>
+      <div class="fields-grid">
+
+        <article class="field-card">
+          <div class="field-card__img-wrap">
+            <img src="images/basketball-hardwood.jpg" alt="Hardwood Hall" />
+            <span class="field-card__badge">Available</span>
+          </div>
+          <div class="field-card__body">
+            <h3 class="field-card__title">Hardwood Hall</h3>
+            <div class="field-card__meta">
+              <span class="field-card__tag">📍 Midtown</span>
+              <span class="field-card__tag">🏀 Full Court</span>
+            </div>
+            <p class="field-card__desc">Professional-grade hardwood court with NBA-regulation hoops, high-ceiling arena lighting, and a full scoreboard.</p>
+            <div class="field-card__footer">
+              <div class="field-card__price"><strong>80K</strong><span>per hour</span></div>
+              <a href="details.html?field=hardwood-hall&sport=basketball" class="btn btn-book">Book Now →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="field-card">
+          <div class="field-card__img-wrap">
+            <img src="images/basketball-rooftop.jpg" alt="Rooftop Run Court" />
+            <span class="field-card__badge">Available</span>
+          </div>
+          <div class="field-card__body">
+            <h3 class="field-card__title">Rooftop Run Court</h3>
+            <div class="field-card__meta">
+              <span class="field-card__tag">📍 East Side</span>
+              <span class="field-card__tag">🏀 3v3 Half Court</span>
+            </div>
+            <p class="field-card__desc">Open-air half court with adjustable hoop heights and evening lighting. Iconic outdoor atmosphere for serious runs.</p>
+            <div class="field-card__footer">
+              <div class="field-card__price"><strong>40K</strong><span>per hour</span></div>
+              <a href="details.html?field=rooftop-run&sport=basketball" class="btn btn-book">Book Now →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="field-card">
+          <div class="field-card__img-wrap">
+            <img src="images/basketball-slam.jpg" alt="Slam Dome Indoor" />
+            <span class="field-card__badge badge--full">Full Today</span>
+          </div>
+          <div class="field-card__body">
+            <h3 class="field-card__title">Slam Dome Indoor</h3>
+            <div class="field-card__meta">
+              <span class="field-card__tag">📍 South Park</span>
+              <span class="field-card__tag">🏀 Full Court</span>
+            </div>
+            <p class="field-card__desc">Premium indoor court with cushioned sport flooring, climate control, full sound system and scoreboard for match nights.</p>
+            <div class="field-card__footer">
+              <div class="field-card__price"><strong>80K</strong><span>per hour</span></div>
+              <a href="details.html?field=slam-dome&sport=basketball" class="btn btn-book">Book Now →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer__inner">
+      <div class="footer__logo">Yalla<span>Play</span></div>
+      <div class="footer__contact">
+        <div class="footer__contact-item"><span>📞</span> 0775970172 / 0780510226</div>
+        <div class="footer__contact-item"><span>📍</span> Uganda, Kampala</div>
+      </div>
+      <p class="footer__copy">© 2026 YallaPlay. All rights reserved.</p>
+      <nav class="footer__links">
+        <a href="index.html">Home</a><a href="football.html">Football</a>
+        <a href="basketball.html">Basketball</a><a href="tennis.html">Tennis</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
