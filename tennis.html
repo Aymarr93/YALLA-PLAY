@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tennis Courts — YallaPlay</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Yalla<span>Play</span></a>
+      <button class="navbar__toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="football.html">Football</a></li>
+        <li><a href="basketball.html">Basketball</a></li>
+        <li><a href="tennis.html" class="active">Tennis</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="sport-hero">
+    <div class="container sport-hero__inner">
+      <div class="sport-hero__text">
+        <p class="sport-hero__label">🎾 Tennis Courts</p>
+        <h1 class="sport-hero__title">SERVE. RALLY. WIN.</h1>
+        <p class="sport-hero__desc">
+          Clay, hard, and grass courts for singles or doubles. Whether you're a weekend warrior or competitive player, we have your court.
+        </p>
+        <div class="stat-row">
+          <div class="stat"><span class="stat__num">3</span><span class="stat__lbl">Courts Available</span></div>
+          <div class="stat"><span class="stat__num">30K</span><span class="stat__lbl">Starting Price / hr</span></div>
+          <div class="stat"><span class="stat__num">3</span><span class="stat__lbl">Surface Types</span></div>
+        </div>
+      </div>
+      <div class="sport-hero__img-wrap">
+        <img src="images/tennis1.jpg" alt="Tennis court" />
+      </div>
+    </div>
+  </section>
+
+  <section class="fields-section">
+    <div class="container">
+      <p class="section-label">Available Courts</p>
+      <h2 class="section-title">Find Your Surface</h2>
+      <div class="fields-grid">
+
+        <article class="field-card">
+          <div class="field-card__img-wrap">
+            <img src="images/tennis-clay.jpg" alt="Clay Classic Court" />
+            <span class="field-card__badge">Available</span>
+          </div>
+          <div class="field-card__body">
+            <h3 class="field-card__title">Clay Classic Court</h3>
+            <div class="field-card__meta">
+              <span class="field-card__tag">📍 Heritage Park</span>
+              <span class="field-card__tag">🎾 Clay Surface</span>
+            </div>
+            <p class="field-card__desc">Traditional red clay court perfect for baseline rallies. Lower ball speed for longer, more tactical points. Great for all levels.</p>
+            <div class="field-card__footer">
+              <div class="field-card__price"><strong>30K</strong><span>per hour</span></div>
+              <a href="details.html?field=clay-classic&sport=tennis" class="btn btn-book">Book Now →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="field-card">
+          <div class="field-card__img-wrap">
+            <img src="images/tennis-ace.jpg" alt="Ace Hard Court" />
+            <span class="field-card__badge">Available</span>
+          </div>
+          <div class="field-card__body">
+            <h3 class="field-card__title">Ace Hard Court</h3>
+            <div class="field-card__meta">
+              <span class="field-card__tag">📍 Sports Complex</span>
+              <span class="field-card__tag">🎾 Hard Surface</span>
+            </div>
+            <p class="field-card__desc">Acrylic hard court with consistent bounce and floodlights for night sessions. Popular for competitive play and coaching.</p>
+            <div class="field-card__footer">
+              <div class="field-card__price"><strong>50K</strong><span>per hour</span></div>
+              <a href="details.html?field=ace-hard&sport=tennis" class="btn btn-book">Book Now →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="field-card">
+          <div class="field-card__img-wrap">
+            <img src="images/tennis-grass.jpg" alt="Grasslands Court" />
+            <span class="field-card__badge badge--full">Full Today</span>
+          </div>
+          <div class="field-card__body">
+            <h3 class="field-card__title">Grasslands Court</h3>
+            <div class="field-card__meta">
+              <span class="field-card__tag">📍 Riverside</span>
+              <span class="field-card__tag">🎾 Grass Surface</span>
+            </div>
+            <p class="field-card__desc">Pristine natural grass maintained to Wimbledon standards. Fast surface for serve-and-volley play. Book early — extremely popular!</p>
+            <div class="field-card__footer">
+              <div class="field-card__price"><strong>35K</strong><span>per hour</span></div>
+              <a href="details.html?field=grasslands&sport=tennis" class="btn btn-book">Book Now →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer__inner">
+      <div class="footer__logo">Yalla<span>Play</span></div>
+      <div class="footer__contact">
+        <div class="footer__contact-item"><span>📞</span> 0775970172 / 0780510226</div>
+        <div class="footer__contact-item"><span>📍</span> Uganda, Kampala</div>
+      </div>
+      <p class="footer__copy">© 2026 YallaPlay. All rights reserved.</p>
+      <nav class="footer__links">
+        <a href="index.html">Home</a><a href="football.html">Football</a>
+        <a href="basketball.html">Basketball</a><a href="tennis.html">Tennis</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
