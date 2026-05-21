@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Field — YallaPlay</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Yalla<span>Play</span></a>
+      <button class="navbar__toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="football.html">Football</a></li>
+        <li><a href="basketball.html">Basketball</a></li>
+        <li><a href="tennis.html">Tennis</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Details Hero ── -->
+  <section class="details-hero">
+    <div class="container">
+      <p class="details-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <a id="breadcrumb-sport" href="football.html">Football</a>
+        <span>›</span>
+        <span id="breadcrumb-name">Field Details</span>
+      </p>
+      <h1 class="sport-hero__title" id="detail-title">Loading...</h1>
+    </div>
+  </section>
+
+  <!-- ── Details Layout ── -->
+  <div class="container">
+    <div class="details-layout">
+
+      <!-- Left: info -->
+      <div class="details-main">
+        <div class="details-img-wrap">
+          <img id="detail-img" src="images/football1.jpg" alt="Field" />
+        </div>
+
+        <h2 class="details-title" id="detail-name">—</h2>
+        <div class="details-meta" id="detail-meta"></div>
+        <p class="details-desc" id="detail-desc">—</p>
+
+        <div class="details-features" id="detail-features"></div>
+
+        <!-- Time Slots -->
+        <h3 class="time-slots-title">Available Time Slots</h3>
+        <div class="time-slots" id="time-slots"></div>
+      </div>
+
+      <!-- Right: booking sidebar -->
+      <aside class="booking-sidebar">
+        <div class="booking-card">
+
+          <div class="booking-card__price">
+            <strong id="sidebar-price">0</strong><span>/ hour</span>
+          </div>
+
+          <p class="booking-card__label">Selected Time</p>
+          <p id="selected-time-display" style="color:var(--muted);font-size:0.88rem;margin-bottom:20px;">
+            No time selected yet
+          </p>
+
+          <p class="booking-card__label">Choose Payment</p>
+          <div class="payment-options">
+
+            <button class="payment-option" id="opt-mtn" onclick="selectPayment('mtn')">
+              <div class="payment-option__logo mtn">📱</div>
+              <div class="payment-option__info">
+                <span class="payment-option__name">MTN MOMO</span>
+                <span class="payment-option__sub">Mobile Money — MTN Uganda</span>
+              </div>
+              <div class="check"></div>
+            </button>
+
+            <button class="payment-option" id="opt-airtel" onclick="selectPayment('airtel')">
+              <div class="payment-option__logo airtel">📲</div>
+              <div class="payment-option__info">
+                <span class="payment-option__name">Airtel Money</span>
+                <span class="payment-option__sub">Mobile Money — Airtel Uganda</span>
+              </div>
+              <div class="check"></div>
+            </button>
+
+          </div>
+
+          <button class="btn-confirm" onclick="confirmBooking()">Confirm Booking ✓</button>
+
+          <p class="booking-card__note">
+            🔒 Secure booking — instant confirmation sent to your phone
+          </p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- ── Confirmation Modal ── -->
+  <div class="confirm-overlay" id="confirmOverlay">
+    <div class="confirm-modal">
+      <div class="confirm-modal__icon">🎉</div>
+      <h2 class="confirm-modal__title">Booking Confirmed!</h2>
+      <p class="confirm-modal__text" id="confirm-text">
+        Your field has been reserved. You will receive a confirmation message shortly.
+      </p>
+      <button class="btn-close-modal" onclick="closeModal()">Back to Home</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer__inner">
+      <div class="footer__logo">Yalla<span>Play</span></div>
+      <div class="footer__contact">
+        <div class="footer__contact-item"><span>📞</span> 0775970172 / 0780510226</div>
+        <div class="footer__contact-item"><span>📍</span> Uganda, Kampala</div>
+      </div>
+      <p class="footer__copy">© 2026 YallaPlay. All rights reserved.</p>
+      <nav class="footer__links">
+        <a href="index.html">Home</a><a href="football.html">Football</a>
+        <a href="basketball.html">Basketball</a><a href="tennis.html">Tennis</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // ── Field Data ─────────────────────────────────────────────
+    const fields = {
+      'arena-green': {
+        name: 'Arena Green Turf',
+        sport: 'football',
+        sportLabel: 'Football',
+        location: 'Downtown', size: '7-a-side', surface: 'Artificial Turf',
+        price: 60,
+        img: 'images/football-arena-green.jpg',
+        desc: 'Premium artificial turf with floodlights, changing rooms, and a nearby café. This electric atmosphere makes it the top choice for evening 7-a-side matches. The high-grip surface is maintained weekly for consistent play.',
+        features: ['Floodlit for night play','Changing rooms & showers','On-site parking','Nearby café & drinks','First-aid kit on site','Ball rental available'],
+        slots: ['07:00','08:00','09:00','10:00','11:00','14:00','15:00','16:00','18:00','19:00','20:00','21:00'],
+        booked: ['09:00','11:00','16:00']
+      },
+      'city-pitch': {
+        name: 'City Pitch Central',
+        sport: 'football', sportLabel: 'Football',
+        location: 'City Centre', size: '11-a-side', surface: 'Natural Grass',
+        price: 90,
+        img: 'images/football-city-pitch.jpg',
+        desc: 'A 11-a-side pitch with a lush natural grass surface and a classic open feel. Ideal for teams that want an authentic outdoor experience. Includes a full-size scoreboard and team benches on both sides.',
+        features: ['Natural grass surface','Scoreboard & benches','Shaded seating area','Locker rooms','Parking available','Referee available on request'],
+        slots: ['06:00','07:00','08:00','10:00','12:00','14:00','16:00','17:00','18:00','20:00'],
+        booked: ['07:00','12:00','20:00']
+      },
+      'westside': {
+        name: 'Westside Grass Pitch',
+        sport: 'football', sportLabel: 'Football',
+        location: 'West District', size: '11-a-side', surface: 'Natural Grass',
+        price: 90,
+        img: 'images/football-westside.jpg',
+        desc: 'Full-sized competition-standard grass pitch under powerful floodlights. The premier choice for league matches and official training sessions. Maintained by professional groundskeepers every day.',
+        features: ['Full 11-a-side pitch','Professional floodlights','VIP changing rooms','On-site referee','Electronic scoreboard','Media/coaching area'],
+        slots: ['08:00','10:00','12:00','14:00','16:00','18:00','20:00'],
+        booked: ['08:00','14:00','18:00','20:00']
+      },
+      'northgate': {
+        name: 'Northgate Indoor Arena',
+        sport: 'football', sportLabel: 'Football',
+        location: 'North Side', size: '7-a-side', surface: 'Artificial Turf',
+        price: 60,
+        img: 'images/football-northgate.jpg',
+        desc: 'Open-air turf arena with a lively atmosphere and consistent all-season surface. Powerful overhead floodlights make it a favourite for evening and late-night sessions all year round.',
+        features: ['All-weather turf','Evening floodlights','Spectator stands','Changing rooms','Ball & bib rental','Secure fenced perimeter'],
+        slots: ['06:00','07:00','08:00','09:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00'],
+        booked: ['07:00','15:00','19:00']
+      },
+      'hardwood-hall': {
+        name: 'Hardwood Hall',
+        sport: 'basketball', sportLabel: 'Basketball',
+        location: 'Midtown', size: 'Full Court', surface: 'Hardwood',
+        price: 80,
+        img: 'images/basketball-hardwood.jpg',
+        desc: 'Professional-grade maple hardwood court in a full arena setting. NBA-regulation hoops, high-ceiling arena lighting, and a fully operational scoreboard make this the go-to venue for serious ballers.',
+        features: ['Regulation hardwood floor','NBA-height hoops','Scoreboard & shot clock','Arena seating','Air conditioning','Sound system'],
+        slots: ['07:00','08:00','09:00','11:00','13:00','15:00','17:00','18:00','19:00','20:00'],
+        booked: ['09:00','13:00','20:00']
+      },
+      'rooftop-run': {
+        name: 'Rooftop Run Court',
+        sport: 'basketball', sportLabel: 'Basketball',
+        location: 'East Side', size: '3v3 Half Court', surface: 'Outdoor',
+        price: 40,
+        img: 'images/basketball-rooftop.jpg',
+        desc: 'Open-air half court with an authentic outdoor basketball experience. Adjustable hoop heights and evening lighting. The iconic atmosphere — city sounds, open sky — makes every run feel like a highlight reel.',
+        features: ['Outdoor open-air court','Adjustable hoop height','Evening lighting','Rubber surface','No membership needed','Great views'],
+        slots: ['06:00','07:00','08:00','09:00','10:00','16:00','17:00','18:00','19:00','20:00','21:00'],
+        booked: ['08:00','17:00']
+      },
+      'slam-dome': {
+        name: 'Slam Dome Indoor',
+        sport: 'basketball', sportLabel: 'Basketball',
+        location: 'South Park', size: 'Full Court', surface: 'Sport Floor',
+        price: 80,
+        img: 'images/basketball-slam.jpg',
+        desc: 'A premium climate-controlled indoor court with cushioned sport flooring that is kind on your knees. Full sound system, scoreboard, and arena seating create the perfect match-night atmosphere for competitive games.',
+        features: ['Climate controlled','Cushioned sport floor','Full scoreboard','Sound system','Arena lighting','Locker rooms & showers'],
+        slots: ['07:00','09:00','11:00','13:00','15:00','17:00','19:00','21:00'],
+        booked: ['07:00','11:00','17:00','21:00']
+      },
+      'clay-classic': {
+        name: 'Clay Classic Court',
+        sport: 'tennis', sportLabel: 'Tennis',
+        location: 'Heritage Park', size: 'Singles / Doubles', surface: 'Clay',
+        price: 30,
+        img: 'images/tennis-clay.jpg',
+        desc: 'Traditional red clay court renowned for slower ball speed and high bounce, favouring tactical baseline players. Maintained to competition quality with fresh lines and regular watering. Ideal for all skill levels.',
+        features: ['Red clay surface','Regular line marking','Net & umpire chair','Adjacent practice wall','Shaded seating','Racket rental available'],
+        slots: ['07:00','08:00','09:00','10:00','11:00','14:00','15:00','16:00','17:00','18:00'],
+        booked: ['09:00','15:00']
+      },
+      'ace-hard': {
+        name: 'Ace Hard Court',
+        sport: 'tennis', sportLabel: 'Tennis',
+        location: 'Sports Complex', size: 'Singles / Doubles', surface: 'Acrylic Hard',
+        price: 50,
+        img: 'images/tennis-ace.jpg',
+        desc: 'Acrylic hard court with consistent, reliable bounce in all weather conditions. Floodlights enable night sessions, making it the most-booked court in the complex. Popular with competitive players and coaches alike.',
+        features: ['Acrylic hard surface','Floodlit for night play','Ball machine rental','Coaching available','Changing rooms','Spectator seating'],
+        slots: ['06:00','07:00','08:00','09:00','10:00','15:00','16:00','17:00','18:00','19:00','20:00'],
+        booked: ['08:00','10:00','18:00']
+      },
+      'grasslands': {
+        name: 'Grasslands Court',
+        sport: 'tennis', sportLabel: 'Tennis',
+        location: 'Riverside', size: 'Singles / Doubles', surface: 'Natural Grass',
+        price: 35,
+        img: 'images/tennis-grass.jpg',
+        desc: 'Pristine natural grass court maintained to Wimbledon-quality standards. The fast, low-bounce surface rewards aggressive serve-and-volley play. Book well in advance — this is the most sought-after court on the platform.',
+        features: ['Wimbledon-grade grass','Premium net system','Umpire chair & line calls','Changing rooms','Courtside seating','Ball & racket rental'],
+        slots: ['07:00','08:00','09:00','11:00','13:00','15:00','17:00'],
+        booked: ['08:00','11:00','13:00','17:00']
+      }
+    };
+
+    // ── State ─────────────────────────────────────────────────
+    let selectedTime    = null;
+    let selectedPayment = null;
+
+    // ── Read URL params ───────────────────────────────────────
+    const params = new URLSearchParams(window.location.search);
+    const fieldKey = params.get('field') || 'arena-green';
+    const field    = fields[fieldKey] || fields['arena-green'];
+
+    // ── Populate page ─────────────────────────────────────────
+    document.title = field.name + ' — YallaPlay';
+
+    document.getElementById('breadcrumb-sport').textContent = field.sportLabel;
+    document.getElementById('breadcrumb-sport').href = field.sport + '.html';
+    document.getElementById('breadcrumb-name').textContent  = field.name;
+    document.getElementById('detail-title').textContent     = field.name;
+    document.getElementById('detail-name').textContent      = field.name;
+    document.getElementById('detail-desc').textContent      = field.desc;
+    document.getElementById('detail-img').src               = field.img;
+    document.getElementById('detail-img').alt               = field.name;
+    document.getElementById('sidebar-price').textContent    = '$' + field.price;
+
+    // Meta tags
+    const metaEl = document.getElementById('detail-meta');
+    [
+      '📍 ' + field.location,
+      '🏟 ' + field.size,
+      '🌿 ' + field.surface,
+      '💰 $' + field.price + '/hr'
+    ].forEach(t => {
+      const span = document.createElement('span');
+      span.className = 'details-tag';
+      span.textContent = t;
+      metaEl.appendChild(span);
+    });
+
+    // Features
+    const featEl = document.getElementById('detail-features');
+    field.features.forEach(f => {
+      const d = document.createElement('div');
+      d.className = 'details-feature';
+      d.textContent = f;
+      featEl.appendChild(d);
+    });
+
+    // Time slots
+    const slotsEl = document.getElementById('time-slots');
+    field.slots.forEach(slot => {
+      const btn = document.createElement('button');
+      btn.className = 'time-slot' + (field.booked.includes(slot) ? ' booked' : '');
+      btn.textContent = slot;
+      btn.disabled = field.booked.includes(slot);
+      btn.addEventListener('click', () => selectTime(slot, btn));
+      slotsEl.appendChild(btn);
+    });
+
+    // ── Interactions ──────────────────────────────────────────
+    function selectTime(slot, btn) {
+      document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedTime = slot;
+      document.getElementById('selected-time-display').textContent = slot + ' — ' + field.name;
+    }
+
+    function selectPayment(method) {
+      document.querySelectorAll('.payment-option').forEach(el => el.classList.remove('selected'));
+      document.getElementById('opt-' + method).classList.add('selected');
+      selectedPayment = method;
+    }
+
+    function confirmBooking() {
+      if (!selectedTime) {
+        alert('Please select a time slot before confirming.');
+        return;
+      }
+      if (!selectedPayment) {
+        alert('Please choose a payment method.');
+        return;
+      }
+      const payLabel = selectedPayment === 'mtn' ? 'MTN MOMO' : 'Airtel Money';
+      document.getElementById('confirm-text').textContent =
+        field.name + ' has been reserved for ' + selectedTime + '. Payment via ' + payLabel + ' will be processed shortly. Enjoy your game!';
+      document.getElementById('confirmOverlay').classList.add('show');
+    }
+
+    function closeModal() {
+      document.getElementById('confirmOverlay').classList.remove('show');
+      window.location.href = 'index.html';
+    }
+
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

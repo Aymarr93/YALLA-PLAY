@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — YallaPlay</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Yalla<span>Play</span></a>
+      <button class="navbar__toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="football.html">Football</a></li>
+        <li><a href="basketball.html">Basketball</a></li>
+        <li><a href="tennis.html">Tennis</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="about-hero">
+    <div class="container">
+      <p class="section-label">MY Story</p>
+      <h1 class="about-hero__title">WHY YALLAPLAY EXISTS</h1>
+      <p class="about-hero__sub">
+        I built YallaPlay to make booking a sports field as easy as sending a message — no trips, no calls, no confusion.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Cards -->
+  <section>
+    <div class="container">
+      <div class="about-sections">
+
+        <div class="about-card">
+          <h2 class="about-card__title">The Problem</h2>
+          <p class="about-card__text">
+            Booking a sports field in the traditional way — by physically going to the venue to reserve a time — can be inconvenient. The field may be far from your location, or you may be busy and unable to go in person. Sometimes, booking conflicts happen due to manual record-keeping. All of this occurs because of manual entry and in-person scheduling.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h2 class="about-card__title">Project Vision</h2>
+          <p class="about-card__text">
+            This project allows users to book their sports field easily and smoothly from anywhere, saving time and eliminating unnecessary trips just to make a reservation. With YallaPlay, your perfect pitch is always just a few taps away — whether you're at home, at work, or already on the way to play.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer__inner">
+      <div class="footer__logo">Yalla<span>Play</span></div>
+      <div class="footer__contact">
+        <div class="footer__contact-item"><span>📞</span> 0775970172 / 0780510226</div>
+        <div class="footer__contact-item"><span>📍</span> Uganda, Kampala</div>
+      </div>
+      <p class="footer__copy">© 2026 YallaPlay. All rights reserved.</p>
+      <nav class="footer__links">
+        <a href="index.html">Home</a><a href="football.html">Football</a>
+        <a href="basketball.html">Basketball</a><a href="tennis.html">Tennis</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

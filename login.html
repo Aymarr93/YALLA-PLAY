@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — YallaPlay</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Yalla<span>Play</span></a>
+      <button class="navbar__toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="football.html">Football</a></li>
+        <li><a href="basketball.html">Basketball</a></li>
+        <li><a href="tennis.html">Tennis</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="login.html" class="active">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="login-page">
+    <div class="login-box">
+
+      <div class="login-box__logo">Yalla<span>Play</span></div>
+      <p class="login-box__tagline">Sign in to book your field instantly</p>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" />
+      </div>
+
+      <button class="btn btn-primary btn-login" onclick="handleLogin()">Login →</button>
+
+      <p class="login-box__signup">
+        Don't have an account? <a href="#">Sign up</a>
+      </p>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer__inner">
+      <div class="footer__logo">Yalla<span>Play</span></div>
+      <div class="footer__contact">
+        <div class="footer__contact-item"><span>📞</span> 0775970172 / 0780510226</div>
+        <div class="footer__contact-item"><span>📍</span> Uganda, Kampala</div>
+      </div>
+      <p class="footer__copy">© 2026 YallaPlay. All rights reserved.</p>
+      <nav class="footer__links">
+        <a href="index.html">Home</a><a href="football.html">Football</a>
+        <a href="basketball.html">Basketball</a><a href="tennis.html">Tennis</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    function handleLogin() {
+      const email = document.getElementById('email').value;
+      const pass  = document.getElementById('password').value;
+      if (!email || !pass) {
+        alert('Please enter your email and password.');
+        return;
+      }
+      // In a real app this would authenticate; for now redirect home
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
